@@ -5,10 +5,9 @@ import Footer from '../components/Footer.astro';
 import StartBanner from '../components/StartBanner.vue';
 import TitleOverBlocks from '../components/TitleOverBlocks.vue';
 import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
-import Swiper from "../components/Swiper.astro";
+// import Swiper from "../components/Swiper.astro";
 import FeedBackForm from "../components/FeedBackForm.vue";
 import Experience from "../components/Experience.astro";
-import SwitcherTheme from "../components/SwitcherTheme.vue";
 ---
 
 <!DOCTYPE html>
@@ -21,7 +20,6 @@ import SwitcherTheme from "../components/SwitcherTheme.vue";
     <Header client:only="vue"/>
     <StartBanner client:only="vue"/>
     <TitleOverBlocks title="Projects"/>
-    <Swiper />
     <TitleOverBlocks title="experience"/>
     <Experience client:visible/>
     <TitleOverBlocks title="Feedback"/>
