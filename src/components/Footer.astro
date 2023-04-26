@@ -1,11 +1,13 @@
 ---
 import {Icon} from 'astro-icon'
+import { Image } from '@astrojs/image/components';
+import footerLogo from "../../assets/logo-portfolio.jpg"
 ---
 
 <div class="footer">
     <div class="left-side">
         <div class="logo">
-            <img src="../../assets/logo-portfolio.jpg" alt="logo"/>
+            <Image src={footerLogo} alt="logo"/>
         </div>
         <div>© 2023 Ilya Sharafeev, LLC. All rights reserved.</div>
     </div>

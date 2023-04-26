@@ -1,0 +1,31 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.astro';
+import StartBanner from '../components/StartBanner.vue';
+import TitleOverBlocks from '../components/TitleOverBlocks.vue';
+import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
+import Swiper from "../components/Swiper.astro";
+import FeedBackForm from "../components/FeedBackForm.vue";
+import Experience from "../components/Experience.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+</head>
+<body>
+<div class="wrapper">
+    <Header client:only="vue"/>
+    <StartBanner client:only="vue"/>
+    <TitleOverBlocks title="Projects"/>
+    <Swiper/>
+    <TitleOverBlocks title="experience"/>
+    <Experience />
+    <TitleOverBlocks title="Feedback"/>
+    <FeedBackForm client:only="vue"/>
+</div>
+<Footer />
+</body>
+</html>
