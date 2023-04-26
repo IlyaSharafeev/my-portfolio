@@ -1,0 +1,15 @@
+:root {
+  --background: #ffffff;
+  --color: #000000;
+  --border: #000000;
+  --scrollbar: #5e5e5e;
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-color: white;
+}
+
+[dark] {
+  --background: #000000;
+  --color: #ffffff;
+  --border: #ffffff;
+  --scrollbar: #d7d7ff;
+}

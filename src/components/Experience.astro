@@ -1,0 +1,136 @@
+---
+import {Icon} from 'astro-icon'
+---
+
+<div class="experience">
+    <div class="title">Companies</div>
+    <div class="works">
+        <div class="work-item">
+            <div class="name">Onix-Systems</div>
+            <div class="position">Frontend Web developer</div>
+            <div class="date">November 7, 2022 - now</div>
+        </div>
+        <div class="border"></div>
+        <div class="work-item">
+            <div class="name">Egolist</div>
+            <div class="position">Full Stack developer</div>
+            <div class="date">January 25, 2022 - November 7, 2022 (11 months)</div>
+        </div>
+        <div class="border"></div>
+        <div class="work-item">
+            <div class="name">KeyUa</div>
+            <div class="position">Trainee Javascript Engineer</div>
+            <div class="date">October 25, 2021 - January 25, 2022 (4 months)</div>
+        </div>
+    </div>
+    <div class="title mt-[100px]">Skills</div>
+    <div class="skills mt-[57px]">
+        <div class="skills-item">
+            <span>html5</span>
+            <Icon name="vscode-icons:file-type-html"/>
+        </div>
+        <div class="skills-item">
+            <span>css3</span>
+            <Icon name="vscode-icons:file-type-css"/>
+        </div>
+        <div class="skills-item">
+            <span>pug</span>
+            <Icon name="logos:pug"/>
+        </div>
+        <div class="skills-item">
+            <span>typescript</span>
+            <Icon name="logos:typescript-icon"/>
+        </div>
+        <div class="skills-item">
+            <span>vue3</span>
+            <Icon name="logos:vue"/>
+        </div>
+        <div class="skills-item">
+            <span>nuxt3</span>
+            <Icon name="logos:nuxt-icon"/>
+        </div>
+        <div class="skills-item">
+            <span>bootstrap3</span>
+            <Icon name="mdi:bootstrap"/>
+        </div>
+        <div class="skills-item">
+            <span>tailwind</span>
+            <Icon name="logos:tailwindcss-icon"/>
+        </div>
+        <div class="skills-item">
+            <span>sass/scss</span>
+            <Icon name="logos:sass"/>
+        </div>
+        <div class="skills-item">
+            <span>git</span>
+            <Icon name="mdi:git"/>
+        </div>
+        <div class="skills-item">
+            <span>javascript</span>
+            <Icon name="logos:javascript"/>
+        </div>
+    </div>
+</div>
+
+<style>
+    .experience {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: var(--color);
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        line-height: 34px;
+        color: #000000;
+    }
+
+    .works {
+        margin-top: 58px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .border {
+        border: 1px solid #000000;
+    }
+
+    .work-item {
+        padding: 0 36px;
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .position {
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    .date {
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 70px;
+    }
+
+    .skills-item {
+        display: flex;
+        gap: 10px;
+    }
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+</style>
