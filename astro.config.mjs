@@ -5,12 +5,10 @@ import vue from "@astrojs/vue";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 
-import image from "@astrojs/image";
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), vue(), tailwind(), image()],
+  integrations: [mdx(), sitemap(), vue(), tailwind()],
   build: {
     transpile: ['maz-ui']
   },
