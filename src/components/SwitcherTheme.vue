@@ -25,13 +25,11 @@ const changeTheme = () => {
         document.body.removeAttribute('dark');
         html.removeAttribute("class", "dark");
         localStorage.removeItem('dark');
-        window.location.reload();
     } else {
         checkedInput.value = true;
         document.body.setAttribute('dark', '');
         html.setAttribute("class", "dark")
         localStorage.setItem('dark', 'true');
-        window.location.reload();
     }
 }
 </script>
