@@ -4,6 +4,8 @@ import sitemap from '@astrojs/sitemap';
 import vue from "@astrojs/vue";
 import tailwind from "@astrojs/tailwind";
 
+import netlify from "@astrojs/netlify/functions";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
@@ -12,4 +14,5 @@ export default defineConfig({
     transpile: ['maz-ui']
   },
   output: "server",
+  adapter: netlify()
 });
