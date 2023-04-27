@@ -8,6 +8,7 @@ import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
 import Swiper from "../components/Swiper.astro";
 import FeedBackForm from "../components/FeedBackForm.vue";
 import Experience from "../components/Experience.astro";
+import MobileMenu from "../components/MobileMenu.vue";
 ---
 
 <!DOCTYPE html>
@@ -25,6 +26,7 @@ import Experience from "../components/Experience.astro";
     <Experience />
     <TitleOverBlocks title="Feedback"/>
     <FeedBackForm client:only="vue"/>
+    <MobileMenu client:only="vue"/>
 </div>
 <Footer />
 </body>

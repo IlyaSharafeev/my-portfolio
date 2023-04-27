@@ -21,13 +21,18 @@ import headerLogo from "../../assets/logo-portfolio.jpg"
 <style scoped lang="scss">
 //.hover-underline-animation (class)
 @import "../styles/animations-underline";
+@import "../styles/media-mixins";
 
 .header {
     min-height: 110px;
     padding: 40px 28px;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
+
+    @include desktop-sm {
+        display: flex;
+    }
 
     .logo {
         width: 110px;
