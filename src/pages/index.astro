@@ -15,20 +15,25 @@ import MobileMenu from "../components/MobileMenu.vue";
 <html lang="en" style="overflow-x: hidden">
 <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body class="overflow-hidden">
 <div class="wrapper">
     <Header client:only="vue"/>
-    <TitleOverBlocks title="About me" top="50"/>
+    <TitleOverBlocks client:only="vue" title="About me" top="50"/>
     <StartBanner client:only="vue"/>
-    <TitleOverBlocks title="Projects"/>
+    <TitleOverBlocks client:only="vue" title="Projects"/>
     <Swiper/>
-    <TitleOverBlocks title="experience"/>
+    <TitleOverBlocks client:only="vue" title="experience"/>
     <Experience />
-    <TitleOverBlocks title="Feedback"/>
+    <TitleOverBlocks client:only="vue" title="Feedback"/>
     <FeedBackForm client:only="vue"/>
     <MobileMenu client:only="vue"/>
 </div>
 <Footer />
+<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script is:inline>
+    AOS.init();
+</script>
 </body>
 </html>

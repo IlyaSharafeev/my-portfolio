@@ -1,7 +1,7 @@
 <template>
 <div class="start-banner">
-  <div class="title">I’m Ilya Sharafeev, a web-developer based in Ukraine.I love turning your ideas into reality. </div>
-  <div class="photo">
+  <div class="title" data-aos="fade-left">I’m Ilya Sharafeev, a web-developer based in Ukraine.I love turning your ideas into reality. </div>
+  <div class="photo" data-aos="fade-right">
       <img :src="imageSRC" alt="ilya-sharafeev photo"/>
   </div>
 </div>

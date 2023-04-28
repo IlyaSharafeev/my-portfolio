@@ -1,21 +1,23 @@
 <template>
     <div class="feedback-form-wrapper">
-        <div class="feedback-form-description">
+        <div class="feedback-form-description" data-aos="fade-up"
+             data-aos-anchor-placement="center-bottom">
             <p>Looking to start a new project or just want to say hi? Send me an email and I’ll do my best to reply
                 within 24 hrs!</p>
             <p>If contact forms aren’t your thing... send me an email at ilyasharafeev01@gmail.com</p>
         </div>
-        <div class="feedback-form-inputs">
+        <div class="feedback-form-inputs" data-aos="fade-up"
+             data-aos-anchor-placement="center-bottom">
             <div class="feedback-form-inputs__name">
                 <MazInput
-                        v-model="firstNameInput"
-                        class="feedback-form-inputs__name-first-name"
-                        id="name"
-                        name="name"
-                        placeholder="first name"
-                        :label="'name:  ' + firstNameInput"
-                        :required="true"
-                        @input="checkInputs"
+                    v-model="firstNameInput"
+                    class="feedback-form-inputs__name-first-name"
+                    id="name"
+                    name="name"
+                    placeholder="first name"
+                    :label="'name:  ' + firstNameInput"
+                    :required="true"
+                    @input="checkInputs"
                         :error="firstNameInput.length <= 0 && activeCheck"
                 />
                 <MazInput

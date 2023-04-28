@@ -14,5 +14,5 @@ export default defineConfig({
     transpile: ['maz-ui']
   },
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
 });
