@@ -12,10 +12,14 @@ import imageSRC from "../../assets/ilya_square.png";
 </script>
 
 <style scoped lang="scss">
+@import "../styles/media-mixins";
+
 .start-banner {
   .title {
     font-weight: 400;
     margin-top: 146px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 69px;
     line-height: 79px;
     font-family: 'Ysabeau', sans-serif;
@@ -30,6 +34,11 @@ import imageSRC from "../../assets/ilya_square.png";
     position: absolute;
     top: 174px;
     right: 74px;
+
+    @include mobile-lg {
+      position: initial;
+      margin: 75px auto;
+    }
   }
 }
 </style>

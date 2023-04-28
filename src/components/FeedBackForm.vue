@@ -9,6 +9,7 @@
             <div class="feedback-form-inputs__name">
                 <MazInput
                         v-model="firstNameInput"
+                        class="feedback-form-inputs__name-first-name"
                         id="name"
                         name="name"
                         placeholder="first name"
@@ -19,6 +20,7 @@
                 />
                 <MazInput
                         v-model="lastNameInput"
+                        class="feedback-form-inputs__name-last-name"
                         placeholder="last name"
                         :label="'last name:  ' + lastNameInput"
                 />
@@ -98,18 +100,26 @@ const checkInputs = () => {
 </script>
 
 <style scoped lang="scss">
-.feedback-form-wrapper {
-  display: flex;
-  gap: 126px;
+@import "../styles/media-mixins";
 
-  .feedback-form-description {
+.feedback-form-wrapper {
     display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 40px;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 34px;
+    gap: 126px;
+    flex-direction: row;
+
+    @include mobile-lg {
+        flex-direction: column;
+    }
+
+
+    .feedback-form-description {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 40px;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 34px;
     color: var(--color);
   }
 
@@ -122,6 +132,20 @@ const checkInputs = () => {
     .feedback-form-inputs__name {
       display: flex;
       gap: 30px;
+
+        .feedback-form-inputs__name-first-name {
+            @include mobile-lg {
+                display: flex;
+                flex: 1;
+            }
+        }
+
+        .feedback-form-inputs__name-last-name {
+            @include mobile-lg {
+                display: flex;
+                flex: 1;
+            }
+        }
     }
 
     .feedback-form-inputs__email {

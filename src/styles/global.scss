@@ -4,7 +4,7 @@
 
 
 body::-webkit-scrollbar {
-    width: 6px;               /* ширина всей полосы прокрутки */
+    width: 6px; /* ширина всей полосы прокрутки */
 }
 
 body::-webkit-scrollbar-track {
@@ -25,4 +25,12 @@ body {
 .wrapper {
     padding: 0 74px;
     background-color: var(--background);
+
+    @include mobile-lg {
+        padding: 0 30px;
+    }
+}
+
+.overflow-hidden {
+    overflow-x: hidden;
 }

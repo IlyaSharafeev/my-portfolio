@@ -72,7 +72,9 @@ import {Icon} from 'astro-icon'
     </div>
 </div>
 
-<style>
+<style lang="scss">
+@import "../styles/_media-mixins.scss";
+
     .experience {
         display: flex;
         justify-content: center;
@@ -92,6 +94,13 @@ import {Icon} from 'astro-icon'
         margin-top: 58px;
         display: flex;
         justify-content: center;
+
+        @media (max-width: 1023px){
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 70px;
+        }
+
     }
 
     .border {

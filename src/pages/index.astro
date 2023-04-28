@@ -12,11 +12,11 @@ import MobileMenu from "../components/MobileMenu.vue";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden">
 <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
 </head>
-<body>
+<body class="overflow-hidden">
 <div class="wrapper">
     <Header client:only="vue"/>
     <StartBanner client:only="vue"/>

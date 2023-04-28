@@ -38,6 +38,12 @@ import footerLogo from "../../assets/logo-portfolio.jpg"
         padding: 40px 50px;
         margin-top: 282px;
 
+        @media (max-width: 1023px){
+            margin-bottom: 122px;
+            flex-direction: column;
+            gap: 40px;
+        }
+
         .left-side {
             display: flex;
             gap: 40px;
@@ -52,9 +58,18 @@ import footerLogo from "../../assets/logo-portfolio.jpg"
             display: flex;
             gap: 30px;
 
+            @media (max-width: 1023px){
+                gap: 50px;
+            }
+
             .icons-item {
                 width: 19px;
                 height: 19px;
+
+                @media (max-width: 1023px){
+                    width: 25px;
+                    height: 25px;
+                }
             }
         }
     }
