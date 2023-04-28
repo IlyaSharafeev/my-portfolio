@@ -1,13 +1,17 @@
 <template>
   <div class="projects">
-      <div class="title">{{title}}</div>
+      <div class="title" :style="{'margin-top': top + 'px'}">{{title}}</div>
       <div class="border"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
 defineProps({
-    title: String
+    title: String,
+    top: {
+        type: String,
+        default: 282
+    }
 })
 </script>
 

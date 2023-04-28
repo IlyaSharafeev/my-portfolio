@@ -27,6 +27,10 @@ import imageSRC from "../../assets/ilya_square.png";
     width: 773px;
     position: relative;
     z-index: 2;
+
+    @include mobile-lg {
+      margin-top: initial;
+    }
   }
 
   .photo {

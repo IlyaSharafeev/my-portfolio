@@ -391,7 +391,6 @@ const clickOnItem = (e: any) => {
 .frame {
     width: 100%;
     height: 240px;
-    border-radius: 0 0 28px 28px;
     overflow: hidden;
     display: none;
     align-items: flex-end;
