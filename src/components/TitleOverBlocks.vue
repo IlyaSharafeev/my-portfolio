@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-      <div class="title" :class="{'typing-demo': isVisible}" v-element-visibility="onElementVisibility" :style="{'margin-top': top + 'px'}">{{title}}</div>
+      <div class="title" :id="title" :class="{'typing-demo': isVisible}" v-element-visibility="onElementVisibility" :style="{'margin-top': top + 'px'}">{{title}}</div>
       <div class="border"></div>
   </div>
 </template>
@@ -9,7 +9,6 @@
 import { ref } from 'vue'
 import { vElementVisibility } from '@vueuse/components'
 
-const target = ref(null)
 const isVisible = ref(false)
 
 function onElementVisibility(state: boolean) {

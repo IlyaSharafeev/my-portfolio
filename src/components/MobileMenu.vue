@@ -1,6 +1,13 @@
 <template>
     <div class="frame">
         <ul class="tabbar shadow-2xl">
+            <li>
+                <a href="#" class="calendar">
+                    <div>
+                        <SwitcherTheme/>
+                    </div>
+                </a>
+            </li>
             <li @click="clickOnItem">
                 <a href="#" class="box">
                     <div>
@@ -22,7 +29,7 @@
             </li>
             <li @click="clickOnItem">
                 <a href="" class="calendar">
-                    <div>
+                    <div class="menu-item">
                         <svg>
                             <use xlink:href="#calendar"/>
                         </svg>
@@ -56,6 +63,7 @@
 
 <script lang="ts" setup>
 import {onMounted, ref} from "vue";
+import SwitcherTheme from "./SwitcherTheme.vue";
 
 onMounted(() => {
     const ul = document.querySelector(".tabbar") as HTMLElement;
@@ -98,18 +106,17 @@ const clickOnItem = (e: any) => {
 
 .tabbar {
     --primary: #275EFE;
-    --background: #e7e7e7;
+    --background: var(--mobile-menu-background);
     --icon-active: #fff;
     --x: 64px;
     width: 100%;
     z-index: 999;
     margin: 0;
     padding: 0 16px;
-    border-radius: 0 0 28px 28px;
     list-style: none;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     background: var(--background);
 
     &:before,
@@ -246,7 +253,7 @@ const clickOnItem = (e: any) => {
             }
 
             &.calendar {
-                div {
+                div.menu-item {
                     &:before {
                         --s-y: .75;
                         height: 2px;

@@ -4,10 +4,10 @@
             <img :src="headerLogo" alt="logo">
         </div>
         <div class="menu">
-            <div class="menu__item hover-underline-animation">Work</div>
-            <div class="menu__item hover-underline-animation">About</div>
-            <div class="menu__item hover-underline-animation">Contact</div>
-            <div class="menu__item hover-underline-animation">Other</div>
+            <a href="#About" class="menu__item hover-underline-animation">About me</a>
+            <a href="#Projects" class="menu__item hover-underline-animation">Projects</a>
+            <a href="#experience" class="menu__item hover-underline-animation">Experience</a>
+            <a href="#Feedback" class="menu__item hover-underline-animation">Feedback</a>
             <SwitcherTheme client:only="vue"/>
         </div>
     </div>

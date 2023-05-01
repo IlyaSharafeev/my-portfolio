@@ -58,6 +58,8 @@ import {reactive, ref} from 'vue'
 import MazInput from 'maz-ui/components/MazInput'
 import MazTextarea from 'maz-ui/components/MazTextarea'
 import MazBtn from 'maz-ui/components/MazBtn'
+import axios from "axios";
+import config from "tailwindcss/defaultConfig";
 
 // inputs values
 const firstNameInput = ref("");
@@ -74,12 +76,27 @@ const activeCheck = ref(false);
 //form
 const logTemp = () => {
     const form = reactive({
-        firstName: firstNameInput.value,
-        lastName: lastNameInput.value,
-        email: emailInput.value,
-        message: messageInput.value,
+        "firstName": String(firstNameInput.value),
+        "lastName": String(lastNameInput.value),
+        "email": String(emailInput.value),
+        "message": String(messageInput.value),
     })
-    console.log(form);
+
+    const config = {
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        }
+    };
+
+
+    axios.post('https://my-portfolio-backend-dusky.vercel.app', form, config)
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
 
 const checkInputs = () => {

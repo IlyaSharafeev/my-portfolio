@@ -17,9 +17,6 @@ import imageSRC from "../../assets/ilya_square.png";
 .start-banner {
   .title {
     font-weight: 400;
-    margin-top: 146px;
-    margin-left: auto;
-    margin-right: auto;
     font-size: 69px;
     line-height: 79px;
     font-family: 'Ysabeau', sans-serif;
@@ -30,14 +27,17 @@ import imageSRC from "../../assets/ilya_square.png";
 
     @include mobile-lg {
       margin-top: initial;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
   .photo {
     width: 606px;
     position: absolute;
-    top: 174px;
+    top: 380px;
     right: 74px;
+    margin-top: 130px;
 
     @include mobile-lg {
       position: initial;
