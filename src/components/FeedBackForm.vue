@@ -82,17 +82,7 @@ const logTemp = () => {
         "message": messageInput.value,
     })
 
-    const config = {
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': '*',
-            'Access-Control-Allow-Headers': '*',
-            'Content-Type': 'application/json',
-        }
-    }
-
-
-    axios.post('https://my-portfolio-backend-dusky.vercel.app', form, config)
+    axios.post('https://my-portfolio-backend-dusky.vercel.app', form)
         .then(function (response) {
             console.log(response);
         })
@@ -141,7 +131,13 @@ const checkInputs = () => {
         font-weight: 400;
         font-size: 30px;
         line-height: 34px;
-    color: var(--color);
+        color: var(--color);
+
+        @include mobile-lg {
+            font-size: 24px;
+            line-height: 47px;
+        }
+
   }
 
   .feedback-form-inputs {

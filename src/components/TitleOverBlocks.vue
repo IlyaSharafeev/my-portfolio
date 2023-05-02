@@ -19,29 +19,39 @@ defineProps({
     title: String,
     top: {
         type: String,
-        default: 282
+        default: 0
     }
 })
 </script>
 
 <style scoped lang="scss">
+@import "../styles/media-mixins";
+
 .projects {
   display: flex;
   gap: 27px;
   flex-direction: column;
 
   .title {
-    margin-top: 282px;
     font-weight: 400;
     font-size: 45.0633px;
     line-height: 52px;
     color: var(--color);
     text-transform: uppercase;
+
+    @include mobile-lg {
+      font-size: 32px;
+    }
   }
 
   .border {
     border: 2px solid var(--border);
     margin-bottom: 102.58px;
+
+    @include mobile-lg {
+      border: 1px dashed var(--border);
+      margin-bottom: 30px;
+    }
   }
 }
 </style>

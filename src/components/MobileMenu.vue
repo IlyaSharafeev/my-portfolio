@@ -1,13 +1,13 @@
 <template>
     <div class="frame">
         <ul class="tabbar shadow-2xl">
-            <li>
-                <a href="#" class="calendar">
-                    <div>
-                        <SwitcherTheme/>
-                    </div>
-                </a>
-            </li>
+<!--            <li>-->
+<!--                <a href="#" class="calendar">-->
+<!--                    <div>-->
+<!--                        <SwitcherTheme/>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--            </li>-->
             <li @click="clickOnItem">
                 <a href="#" class="box">
                     <div>
@@ -65,10 +65,19 @@
 import {onMounted, ref} from "vue";
 import SwitcherTheme from "./SwitcherTheme.vue";
 
-onMounted(() => {
+const setDribblePosition = () => {
     const ul = document.querySelector(".tabbar") as HTMLElement;
     const tempLi = document.querySelector("li.active") as HTMLElement;
     ul.style.setProperty('--x', tempLi.getBoundingClientRect().left + tempLi.offsetWidth / 2 + 'px')
+}
+
+onMounted(() => {
+    setDribblePosition();
+
+    // Appointment of a drop if the size of the device has changed
+    window.addEventListener("resize", function() {
+        setDribblePosition()
+    }, false);
 })
 const clickOnItem = (e: any) => {
     e.preventDefault();
@@ -116,7 +125,7 @@ const clickOnItem = (e: any) => {
     list-style: none;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     background: var(--background);
 
     &:before,

@@ -99,6 +99,12 @@ import {Icon} from 'astro-icon'
         font-size: 30px;
         line-height: 34px;
         color: #000000;
+        margin-top: 100px;
+
+        @media (max-width: 1023px){
+            font-size: 28px;
+            margin-top: 60px;
+        }
     }
 
     .works {
@@ -116,6 +122,10 @@ import {Icon} from 'astro-icon'
 
     .border {
         border: 1px solid var(--border);
+
+        @media (max-width: 1023px){
+            display: none;
+        }
     }
 
     .work-item {
