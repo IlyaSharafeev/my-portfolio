@@ -76,21 +76,20 @@ const activeCheck = ref(false);
 //form
 const logTemp = () => {
     const form = reactive({
-        "firstName": String(firstNameInput.value),
-        "lastName": String(lastNameInput.value),
-        "email": String(emailInput.value),
-        "message": String(messageInput.value),
+        "firstName": firstNameInput.value,
+        "lastName": lastNameInput.value,
+        "email": emailInput.value,
+        "message": messageInput.value,
     })
 
     const config = {
         headers: {
-            // 'Access-Control-Allow-Origin': '*',
-            // 'Access-Control-Allow-Methods': '*',
-            // 'Access-Control-Allow-Headers': '*',
-            'Access-Control-Allow': '*',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Headers': '*',
             'Content-Type': 'application/json',
         }
-    };
+    }
 
 
     axios.post('https://my-portfolio-backend-dusky.vercel.app', form, config)
