@@ -24,10 +24,8 @@
     "axios": "^1.4.0",
     "maz-ui": "^3.8.0",
     "pug": "^3.0.2",
-    "swiper": "^8.4.7",
     "tailwindcss": "^3.3.1",
-    "vue": "^3.2.47",
-    "vue-awesome-swiper": "^5.0.1"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "sass": "^1.62.0"
