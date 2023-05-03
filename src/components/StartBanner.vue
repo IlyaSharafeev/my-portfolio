@@ -18,10 +18,17 @@ const title = ref(`Greetings! My name is Ilya, I'm from Ukraine! At the age of 1
 @import "../styles/media-mixins";
 
 .start-banner {
+  display: flex;
+  gap: 100px;
+
+  @include mobile-lg {
+    display: initial;
+  }
+
   .title {
     font-weight: 400;
-    font-size: 69px;
-    line-height: 79px;
+    font-size: 32px;
+    line-height: 59px;
     font-family: 'Ysabeau', sans-serif;
     color: var(--color);
     width: 773px;
@@ -40,11 +47,9 @@ const title = ref(`Greetings! My name is Ilya, I'm from Ukraine! At the age of 1
   }
 
   .photo {
-    max-width: 606px;
-    position: absolute;
+    max-width: 320px;
     top: 380px;
     right: 74px;
-    margin-top: 130px;
 
     img {
       border-radius: 50%;

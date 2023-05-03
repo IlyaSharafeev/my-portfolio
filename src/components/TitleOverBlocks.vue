@@ -46,7 +46,7 @@ defineProps({
 
   .border {
     border: 2px solid var(--border);
-    margin-bottom: 102.58px;
+    margin-bottom: 130px;
 
     @include mobile-lg {
       border: 1px dashed var(--border);

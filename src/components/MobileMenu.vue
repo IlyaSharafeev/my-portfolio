@@ -65,6 +65,23 @@
 import {onMounted, ref} from "vue";
 import SwitcherTheme from "./SwitcherTheme.vue";
 
+const toggleSideMenu = (e: any) => {
+    const menu = document.querySelector("#menu") as HTMLElement;
+
+    // Open side menu
+    if(e.target.closest(".box")) {
+        menu.classList.toggle("menu_active");
+    } else {
+        menu.classList.remove("menu_active");
+    }
+}
+
+const scrollToTop = (e: any) => {
+    if(e.target.closest(".home")) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
 const setDribblePosition = () => {
     const ul = document.querySelector(".tabbar") as HTMLElement;
     const tempLi = document.querySelector("li.active") as HTMLElement;
@@ -79,8 +96,12 @@ onMounted(() => {
         setDribblePosition()
     }, false);
 })
+
 const clickOnItem = (e: any) => {
     e.preventDefault();
+
+    toggleSideMenu(e);
+    scrollToTop(e);
 
     const ul = document.querySelector(".tabbar") as HTMLElement;
     const li = e.target.closest('li') as HTMLElement;

@@ -9,6 +9,7 @@ import Swiper from "../components/Swiper.astro";
 import FeedBackForm from "../components/FeedBackForm.vue";
 import Experience from "../components/Experience.astro";
 import MobileMenu from "../components/MobileMenu.vue";
+import SideMenuMobile from "../components/SideMenuMobile.vue";
 ---
 
 <!DOCTYPE html>
@@ -20,14 +21,15 @@ import MobileMenu from "../components/MobileMenu.vue";
 <body class="overflow-hidden">
 <div class="wrapper">
     <Header client:only="vue"/>
-    <TitleOverBlocks client:only="vue" title="About"/>
+    <TitleOverBlocks client:only="vue" title="about"/>
     <StartBanner client:only="vue"/>
-    <TitleOverBlocks client:only="vue" title="Projects" top="100"/>
+    <TitleOverBlocks client:only="vue" title="projects" top="100"/>
     <Swiper/>
     <TitleOverBlocks client:only="vue" title="experience" top="100"/>
     <Experience />
-    <TitleOverBlocks client:only="vue" title="Feedback" top="100"/>
+    <TitleOverBlocks client:only="vue" title="feedback" top="100"/>
     <FeedBackForm client:only="vue"/>
+    <SideMenuMobile client:only="vue"/>
     <MobileMenu client:only="vue"/>
 </div>
 <Footer />
