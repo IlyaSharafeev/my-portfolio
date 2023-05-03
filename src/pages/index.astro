@@ -5,11 +5,11 @@ import Footer from '../components/Footer.astro';
 import StartBanner from '../components/StartBanner.vue';
 import TitleOverBlocks from '../components/TitleOverBlocks.vue';
 import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
-import Swiper from "../components/Swiper.astro";
 import FeedBackForm from "../components/FeedBackForm.vue";
 import Experience from "../components/Experience.astro";
 import MobileMenu from "../components/MobileMenu.vue";
 import SideMenuMobile from "../components/SideMenuMobile.vue";
+import Projects from "../components/Projects.vue";
 ---
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ import SideMenuMobile from "../components/SideMenuMobile.vue";
     <TitleOverBlocks client:only="vue" title="about"/>
     <StartBanner client:only="vue"/>
     <TitleOverBlocks client:only="vue" title="projects" top="100"/>
-    <Swiper/>
+    <Projects/>
     <TitleOverBlocks client:only="vue" title="experience" top="100"/>
     <Experience />
     <TitleOverBlocks client:only="vue" title="feedback" top="100"/>

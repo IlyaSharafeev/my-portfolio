@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <div class="menu menu_active" id="menu" ref="menu">
+        <div class="menu" id="menu" ref="menu">
             <SwitcherTheme class="switcher-theme"/>
             <div class="close-button" @click="closeMenu"></div>
             <nav class="menu-list">
