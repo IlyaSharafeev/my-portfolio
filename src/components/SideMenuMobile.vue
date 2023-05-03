@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
-        <div class="menu" id="menu" ref="menu">
+        <div class="menu menu_active" id="menu" ref="menu">
             <SwitcherTheme class="switcher-theme"/>
-            <div class="close-button"></div>
+            <div class="close-button" @click="closeMenu"></div>
             <nav class="menu-list">
                 <div @click="clickOnListItem" id="about">About</div>
                 <div @click="clickOnListItem" id="projects">Projects</div>
@@ -20,7 +20,7 @@ import {ref} from "vue";
 const menu = ref(null) as any;
 
 const clickOnListItem = (e: any) => {
-    menu.value.classList.remove("menu_active");
+    closeMenu();
 
     const aboutBlock = document.querySelector("#about") as HTMLElement;
     const projectsBlock = document.querySelector("#projects") as HTMLElement;
@@ -58,6 +58,10 @@ const clickOnListItem = (e: any) => {
             break;
         }
     }
+}
+
+const closeMenu = () => {
+    menu.value.classList.remove("menu_active");
 }
 </script>
 
@@ -98,6 +102,7 @@ const clickOnListItem = (e: any) => {
     justify-content: space-around;
     align-items: center;
     height: 50%;
+    color: var(--color);
     flex-direction: column;
     margin-bottom: 110px;
     font-size: 26px;
@@ -117,5 +122,28 @@ const clickOnListItem = (e: any) => {
     position: absolute !important;
     top: 25px;
     left: 30px;
+}
+
+.close-button {
+    cursor: pointer;
+    position: absolute;
+    top: 35px;
+    right: 45px;
+}
+
+.close-button:before, .close-button:after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background: gray;
+}
+
+.close-button:before {
+    transform: rotate(45deg);
+}
+
+.close-button:after {
+    transform: rotate(-45deg);
 }
 </style>

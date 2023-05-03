@@ -47,7 +47,7 @@
                 />
             </div>
             <div>
-                <MazBtn color="black" class="min-w-[150px]" @click="logTemp" :disabled="disabledButton">Send</MazBtn>
+                <MazBtn color="black" class="min-w-[150px] z-[2]" @click="logTemp" :disabled="disabledButton">Send</MazBtn>
             </div>
         </div>
     </div>
@@ -59,7 +59,6 @@ import MazInput from 'maz-ui/components/MazInput'
 import MazTextarea from 'maz-ui/components/MazTextarea'
 import MazBtn from 'maz-ui/components/MazBtn'
 import axios from "axios";
-import config from "tailwindcss/defaultConfig";
 
 // inputs values
 const firstNameInput = ref("");
