@@ -1,18 +1,22 @@
 <template lang="pug">
 - var n = 0;
-.content
+
+.content(data-aos="fade-up" data-aos-duration="2000")
   while n++ < 6
-    a(href="#!").card
-      .front(style="background-image: url(//source.unsplash.com/300x40" + n + ")")
-        p Lorem ipsum dolor sit amet consectetur adipisi.
-      .back
-        div
+    a(href="#").card
+      .front(style=`background-image: url(../../assets/project-card.jpg)`)
+        p Project !{n}
+      .back.shadow-2xl
+        div.back-content
           p Consectetur adipisicing elit. Possimus, praesentium?
-          p Provident consectetur natus voluptatem quis tenetur sed beatae eius sint.
-          button.button Click Here
+          div.back-content-buttons
+            button.button Demo
+            button.button Code
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+
+</script>
 
 <style scoped lang="scss">
 $primary: hsl(222, 80%, 50%);
@@ -31,22 +35,6 @@ $orange: hsl(50, 80%, 50%);
   @media screen and (max-width: $size) {
     @content;
   }
-}
-
-html {
-  font-size: 18px;
-  line-height: 1.5;
-  font-weight: 300;
-  color: #333;
-  font-family: "Nunito Sans", sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-color: $primary-light;
-  background-attachment: fixed;
 }
 
 .content {
@@ -123,6 +111,20 @@ body {
   transform-style: preserve-3d;
   transition: ease-in-out 600ms;
   // overflow: hidden;
+
+  .back-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    gap: 30px;
+
+    &-buttons {
+      display: flex;
+      gap: 30px;
+    }
+  }
 }
 
 .front {
@@ -158,7 +160,7 @@ body {
 }
 
 .back {
-  background: #fff;
+  background: #efefef;
   transform: rotateY(-180deg);
   padding: 0 2em;
 
