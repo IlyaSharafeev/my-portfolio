@@ -3,7 +3,7 @@
 
 .content(data-aos="fade-up" data-aos-duration="2000")
   while n++ < 6
-    a(href="#").card
+    div.card
       .front(style=`background-image: url(../../assets/project-card.jpg)`)
         p Project !{n}
       .back.shadow-2xl
@@ -201,7 +201,7 @@ $orange: hsl(50, 80%, 50%);
   cursor: pointer;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  color: #fff;
+  color: var(--color);
   padding: .5em 1em;
   border-radius: 100px;
   font: inherit;

@@ -25,7 +25,7 @@ import headerLogo from "../../assets/logo-portfolio.jpg"
 
 .header {
     min-height: 110px;
-    padding: 40px 28px 160px;
+    padding: 40px 0 160px;
     display: none;
     justify-content: space-between;
     align-items: center;

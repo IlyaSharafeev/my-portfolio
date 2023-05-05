@@ -47,7 +47,10 @@
                 />
             </div>
             <div>
-                <MazBtn color="black" class="min-w-[150px] z-[2]" @click="logTemp" :disabled="disabledButton">Send</MazBtn>
+                <MazBtn color="black" class="min-w-[150px] z-[2] h-[45px]" @click="sendEmail" :disabled="disabledButton">
+                    <span v-if="!stateSpinner">Send</span>
+                    <MazSpinner v-if="stateSpinner" size="25px" color="primary" class=""/>
+                </MazBtn>
             </div>
         </div>
     </div>
@@ -58,6 +61,7 @@ import {reactive, ref} from 'vue'
 import MazInput from 'maz-ui/components/MazInput'
 import MazTextarea from 'maz-ui/components/MazTextarea'
 import MazBtn from 'maz-ui/components/MazBtn'
+import MazSpinner from "maz-ui/components/MazSpinner";
 import axios from "axios";
 
 // inputs values
@@ -72,22 +76,38 @@ const emailErrorText = ref("");
 const disabledButton = ref(true);
 const activeCheck = ref(false);
 
+//state spinner
+const stateSpinner = ref(false);
+
 //form
-const logTemp = () => {
+const sendEmail = async () => {
+    console.log("spinner started")
+    stateSpinner.value = true;
     const form = reactive({
         "firstName": firstNameInput.value,
         "lastName": lastNameInput.value,
         "email": emailInput.value,
         "message": messageInput.value,
     })
-
-    axios.post('https://my-portfolio-backend-dusky.vercel.app', form)
+    await axios.post('https://my-portfolio-backend-dusky.vercel.app', form)
         .then(function (response) {
-            console.log(response);
+            // success
+            if(response.status === 204) {
+                firstNameInput.value = "";
+                lastNameInput.value = "";
+                emailInput.value = "";
+                messageInput.value = "";
+                activeCheck.value = false;
+                disabledButton.value = true;
+
+                localStorage.setItem("sentMessage", "true");
+            }
         })
         .catch(function (error) {
             console.log(error);
         });
+    console.log("spinner end")
+    stateSpinner.value = false;
 }
 
 const checkInputs = () => {

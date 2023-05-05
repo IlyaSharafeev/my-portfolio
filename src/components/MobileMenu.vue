@@ -1,13 +1,6 @@
 <template>
     <div class="frame">
         <ul class="tabbar shadow-2xl">
-<!--            <li>-->
-<!--                <a href="#" class="calendar">-->
-<!--                    <div>-->
-<!--                        <SwitcherTheme/>-->
-<!--                    </div>-->
-<!--                </a>-->
-<!--            </li>-->
             <li @click="clickOnItem">
                 <a href="#" class="box">
                     <div>
@@ -27,8 +20,8 @@
                     </div>
                 </a>
             </li>
-            <li @click="clickOnItem">
-                <a href="" class="calendar">
+            <li @click="clickOnItem" class="relative">
+                <a href="" target="_blank" class="calendar">
                     <div class="menu-item">
                         <svg>
                             <use xlink:href="#calendar"/>
@@ -36,6 +29,7 @@
                         <em></em>
                     </div>
                 </a>
+                <div v-if="showNotification == 'true'" class="notification"></div>
             </li>
         </ul>
     </div>
@@ -65,20 +59,36 @@
 import {onMounted, ref} from "vue";
 import SwitcherTheme from "./SwitcherTheme.vue";
 
+const showNotification = ref(localStorage.getItem("sendMessage"));
+import { useStore } from '@nanostores/vue';
+import {isCartOpen} from "../store/global";
+
+const $isCartOpen = useStore(isCartOpen);
 const toggleSideMenu = (e: any) => {
     const menu = document.querySelector("#menu") as HTMLElement;
 
     // Open side menu
     if(e.target.closest(".box")) {
         menu.classList.toggle("menu_active");
+        document.querySelector("html").style.overflowY = 'hidden';
     } else {
         menu.classList.remove("menu_active");
+        document.querySelector("html").style.overflowY = 'scroll';
     }
 }
 
 const scrollToTop = (e: any) => {
     if(e.target.closest(".home")) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+const openDialog = (e: any) => {
+    if(e.target.closest(".calendar")) {
+        document.querySelector("html").style.overflowY = 'scroll';
+        console.log($isCartOpen.value);
+        isCartOpen.set(true);
+        console.log($isCartOpen.value)
     }
 }
 
@@ -102,6 +112,7 @@ const clickOnItem = (e: any) => {
 
     toggleSideMenu(e);
     scrollToTop(e);
+    openDialog(e);
 
     const ul = document.querySelector(".tabbar") as HTMLElement;
     const li = e.target.closest('li') as HTMLElement;
@@ -133,6 +144,16 @@ const clickOnItem = (e: any) => {
 
 <style scoped lang="scss">
 @import "../styles/media-mixins";
+
+.notification {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
 
 .tabbar {
     --primary: #275EFE;

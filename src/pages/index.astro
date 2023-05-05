@@ -10,6 +10,7 @@ import Experience from "../components/Experience.astro";
 import MobileMenu from "../components/MobileMenu.vue";
 import SideMenuMobile from "../components/SideMenuMobile.vue";
 import Projects from "../components/Projects.vue";
+import Popup from "../components/Popup.vue";
 ---
 
 <!DOCTYPE html>
@@ -32,6 +33,7 @@ import Projects from "../components/Projects.vue";
     <SideMenuMobile client:only="vue"/>
     <MobileMenu client:only="vue"/>
 </div>
+<Popup client:load />
 <Footer />
 <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script is:inline>

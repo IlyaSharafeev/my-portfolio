@@ -4,10 +4,10 @@
             <SwitcherTheme class="switcher-theme"/>
             <div class="close-button" @click="closeMenu"></div>
             <nav class="menu-list">
-                <div @click="clickOnListItem" id="about">About</div>
-                <div @click="clickOnListItem" id="projects">Projects</div>
-                <div @click="clickOnListItem" id="experience">Experience</div>
-                <div @click="clickOnListItem" id="feedback">Feedback</div>
+                <div class="cursor-pointer" @click="clickOnListItem" id="about">About</div>
+                <div class="cursor-pointer" @click="clickOnListItem" id="projects">Projects</div>
+                <div class="cursor-pointer" @click="clickOnListItem" id="experience">Experience</div>
+                <div class="cursor-pointer" @click="clickOnListItem" id="feedback">Feedback</div>
             </nav>
         </div>
     </div>
@@ -27,8 +27,7 @@ const clickOnListItem = (e: any) => {
     const experienceBlock = document.querySelector("#experience") as HTMLElement;
     const feedbackBlock = document.querySelector("#feedback") as HTMLElement;
 
-    console.log(e.target.id);
-
+    document.querySelector("html").style.overflowY = 'scroll';
 
     switch (e.target.id) {
         case "about": {
@@ -62,6 +61,7 @@ const clickOnListItem = (e: any) => {
 
 const closeMenu = () => {
     menu.value.classList.remove("menu_active");
+    document.querySelector("html").style.overflowY = 'scroll';
 }
 </script>
 

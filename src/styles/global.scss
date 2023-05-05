@@ -3,6 +3,9 @@
 @import "_anymations-typing-text";
 @import "_variables.scss";
 
+html {
+    //overflow-y: scroll !important;
+}
 
 body::-webkit-scrollbar {
     width: 6px; /* ширина всей полосы прокрутки */

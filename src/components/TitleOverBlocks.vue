@@ -18,7 +18,7 @@ function onElementVisibility(state: boolean) {
 defineProps({
     title: String,
     top: {
-        type: String,
+        type: [String, Number],
         default: 0
     }
 })
