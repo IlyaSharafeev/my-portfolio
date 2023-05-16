@@ -1,17 +1,11 @@
 <template>
-    <MazDialog v-model="$isCartOpen" title="Dialog Title" :scrollable="false">
+    <MazDialog v-model="$isCartOpen" title="Dialog Title" :scrollable="false" @close="closeDialog">
         <VideoPlayer />
-        <template #footer="{ close }">
-            <MazBtn @click="closeDialog">
-                Confirm
-            </MazBtn>
-        </template>
     </MazDialog>
 </template>
 
 <script lang="ts" setup>
 import MazDialog from 'maz-ui/components/MazDialog'
-import MazBtn from 'maz-ui/components/MazBtn'
 
 
 import { useStore } from '@nanostores/vue';
@@ -23,5 +17,3 @@ const closeDialog = () => {
 
 const $isCartOpen = useStore(isCartOpen);
 </script>
-
-<style scoped lang="scss"></style>

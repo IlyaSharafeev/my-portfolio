@@ -43,14 +43,12 @@ const clickOnListItem = (e: any) => {
             break;
         }
         case "experience": {
-            console.log('123');
             setTimeout(() => {
                 experienceBlock.scrollIntoView( {block: "start", inline: "start", behavior: "smooth"});
             }, 700)
             break;
         }
         case "feedback": {
-            console.log('123');
             setTimeout(() => {
                 feedbackBlock.scrollIntoView( {block: "start", inline: "start", behavior: "smooth"});
             }, 700)

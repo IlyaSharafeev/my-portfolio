@@ -81,7 +81,6 @@ const stateSpinner = ref(false);
 
 //form
 const sendEmail = async () => {
-    console.log("spinner started")
     stateSpinner.value = true;
     const form = reactive({
         "firstName": firstNameInput.value,
@@ -106,7 +105,6 @@ const sendEmail = async () => {
         .catch(function (error) {
             console.log(error);
         });
-    console.log("spinner end")
     stateSpinner.value = false;
 }
 
@@ -182,10 +180,6 @@ const checkInputs = () => {
                 flex: 1;
             }
         }
-    }
-
-    .feedback-form-inputs__email {
-
     }
   }
 }

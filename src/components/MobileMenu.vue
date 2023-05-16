@@ -86,9 +86,7 @@ const scrollToTop = (e: any) => {
 const openDialog = (e: any) => {
     if(e.target.closest(".calendar")) {
         document.querySelector("html").style.overflowY = 'scroll';
-        console.log($isCartOpen.value);
         isCartOpen.set(true);
-        console.log($isCartOpen.value)
     }
 }
 

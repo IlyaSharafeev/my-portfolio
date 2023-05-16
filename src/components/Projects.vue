@@ -201,7 +201,7 @@ $orange: hsl(50, 80%, 50%);
   cursor: pointer;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  color: var(--color);
+  color: white;
   padding: .5em 1em;
   border-radius: 100px;
   font: inherit;
