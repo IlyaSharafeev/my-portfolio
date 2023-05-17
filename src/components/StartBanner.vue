@@ -25,6 +25,11 @@ const title = ref(`Greetings! My name is Ilya, I'm from Ukraine! At the age of 1
     display: initial;
   }
 
+  @include desktop-md {
+    justify-content: space-between;
+    padding-right: 100px;
+  }
+
   .title {
     font-weight: 400;
     font-size: 32px;

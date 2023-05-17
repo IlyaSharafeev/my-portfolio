@@ -30,7 +30,7 @@ import headerLogo from "../../assets/logo-portfolio.jpg"
     justify-content: space-between;
     align-items: center;
 
-    @include desktop-sm {
+    @media (min-width: 1024px) {
         display: flex;
     }
 
