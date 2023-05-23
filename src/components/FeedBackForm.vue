@@ -57,8 +57,8 @@
 </template>
 
 <script lang="ts" setup>
-import {reactive, ref} from 'vue'
-import MazInput from 'maz-ui/components/MazInput'
+import {reactive, ref} from 'vue';
+import MazInput from 'maz-ui/components/MazInput';
 import MazTextarea from 'maz-ui/components/MazTextarea'
 import MazBtn from 'maz-ui/components/MazBtn'
 import MazSpinner from "maz-ui/components/MazSpinner";
