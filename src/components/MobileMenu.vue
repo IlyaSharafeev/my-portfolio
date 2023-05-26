@@ -50,9 +50,9 @@
     </svg>
 
     <!-- dribbble -->
-    <a class="dribbble" href="https://dribbble.com/shots/7030278-Tab-bar-animation" target="_blank"><img
+    <a class="dribbble" href="https://dribbble.com/shots/7030278-Tab-bar-animation" target="_blank"><amp-img
         src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
-        alt=""></a>
+        alt="dribble-blue" width="64" height="64"/></a>
 </template>
 
 <script lang="ts" setup>

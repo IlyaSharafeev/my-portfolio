@@ -7,7 +7,7 @@ import footerLogo from "../../assets/logo-portfolio.jpg"
      data-aos-anchor-placement="center-bottom">
     <div class="left-side">
         <div class="logo">
-            <img src={footerLogo} alt="logo"/>
+            <amp-img height="35" width="100" layout="responsive" src={footerLogo} alt="logo"/>
         </div>
         <div>© 2023 Ilya Sharafeev, LLC. All rights reserved.</div>
     </div>
@@ -49,10 +49,11 @@ import footerLogo from "../../assets/logo-portfolio.jpg"
         .left-side {
             display: flex;
             gap: 40px;
+            align-items: center;
 
             .logo {
-                width: 69px;
-                height: 37px;
+                min-width: 70px;
+                min-height: 00px;
             }
         }
 

@@ -18,7 +18,7 @@ import SwitcherTheme from "./SwitcherTheme.vue";
 import headerLogo from "../../assets/logo-portfolio.jpg"
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="scss" amp-custom>
 //.hover-underline-animation (class)
 @import "../styles/animations-underline";
 @import "../styles/media-mixins";

@@ -2,7 +2,8 @@
 <div class="start-banner">
   <div class="title" data-aos="fade-left" v-html="title"></div>
   <div class="photo" data-aos="fade-right">
-      <img :src="imageSRC" alt="ilya-sharafeev photo"/>
+      <amp-img media="(max-width: 1023px)" width=337 height=337 layout="responsive" :src="imageSRC" alt="ilya-sharafeev photo"/>
+      <img class="desktop-img" :src="imageSRC" alt="ilya-sharafeev photo"/>
   </div>
 </div>
 </template>
@@ -58,6 +59,12 @@ const title = ref(`Greetings! My name is Ilya, I'm from Ukraine! At the age of 1
 
     img {
       border-radius: 50%;
+    }
+
+    img.desktop-img {
+      @include mobile-lg {
+        display: none;
+      }
     }
 
     @include mobile-lg {
