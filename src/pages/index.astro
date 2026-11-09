@@ -6,6 +6,9 @@ const title = `${profile.name} — ${profile.role} (React, Vue, Angular, TypeScr
 const description = `${profile.role}: ${profile.stackLine}. ${profile.location}. ${profile.availability}.`;
 const year = new Date().getFullYear();
 const ext = { target: '_blank', rel: 'noopener noreferrer' };
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const asset = (file: string) => `${base}/${file}`;
+const pageUrl = new URL(`${base}/`, Astro.site);
 ---
 
 <!doctype html>
@@ -15,12 +18,12 @@ const ext = { target: '_blank', rel: 'noopener noreferrer' };
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={Astro.site} />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="icon" type="image/png" href={asset('favicon.png')} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL('/photo.jpg', Astro.site)} />
+    <meta property="og:image" content={new URL(asset('photo.jpg'), Astro.site)} />
     <meta name="twitter:card" content="summary" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,7 +53,7 @@ const ext = { target: '_blank', rel: 'noopener noreferrer' };
     <main id="top" class="mx-auto max-w-4xl px-4 sm:px-6">
       <section class="flex flex-col gap-8 py-14 sm:flex-row sm:items-center sm:py-20">
         <img
-          src="/photo.jpg"
+          src={asset('photo.jpg')}
           alt={profile.name}
           width="160"
           height="160"
