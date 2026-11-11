@@ -114,5 +114,5 @@ export const education = {
   degree: 'M.Sc. in Computer Science',
   school: 'Oles Honchar Dnipro National University',
   year: '2025',
-  languages: ['Ukrainian — native', 'Russian — fluent', 'English — B1'],
+  languages: ['Ukrainian — native', 'Russian — fluent', 'English — B2 (upper-intermediate)'],
 };
